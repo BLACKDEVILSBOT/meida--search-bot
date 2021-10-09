@@ -109,7 +109,7 @@ async def group(client, message):
         else:
             buttons = btn
             buttons.append(
-                [InlineKeyboardButton(text="📄 ᴘᴀɢᴇs 1/1 📄",callback_data="pages")]
+                [InlineKeyboardButton(text="📄 ᴘᴀɢᴇꜱ 1/1 📄",callback_data="pages")]
             )
             poster=None
             if API_KEY:
@@ -176,7 +176,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 buttons = data['buttons'][int(index)+1].copy()
 
                 buttons.append(
-                    [InlineKeyboardButton("🍁 Back ᴘᴀɢᴇ 🍁", callback_data=f"back_{int(index)+1}_{keyword}")]
+                    [InlineKeyboardButton("🍁 ʙᴀᴄᴋ ᴘᴀɢᴇ 🍁", callback_data=f"back_{int(index)+1}_{keyword}")]
                 )
                 buttons.append(
                     [InlineKeyboardButton(f"📄 ᴘᴀɢᴇs {int(index)+2}/{data['total']} 📄", callback_data="pages")]
@@ -190,7 +190,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 buttons = data['buttons'][int(index)+1].copy()
 
                 buttons.append(
-                    [InlineKeyboardButton("🍁 Back ᴘᴀɢᴇ 🍁", callback_data=f"back_{int(index)+1}_{keyword}"),InlineKeyboardButton("🍁 ɴᴇxᴛ ᴘᴀɢᴇ 🍁", callback_data=f"next_{int(index)+1}_{keyword}")]
+                    [InlineKeyboardButton("🍁 ʙᴀᴄᴋ ᴘᴀɢᴇ 🍁", callback_data=f"back_{int(index)+1}_{keyword}"),InlineKeyboardButton("🍁 ɴᴇxᴛ ᴘᴀɢᴇ 🍁", callback_data=f"next_{int(index)+1}_{keyword}")]
                 )
                 buttons.append(
                     [InlineKeyboardButton(f"📄 ᴘᴀɢᴇs {int(index)+2}/{data['total']} 📄", callback_data="pages")]
@@ -228,7 +228,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 buttons = data['buttons'][int(index)-1].copy()
 
                 buttons.append(
-                    [InlineKeyboardButton("🍁 Back ᴘᴀɢᴇ 🍁", callback_data=f"back_{int(index)-1}_{keyword}"),InlineKeyboardButton("🍁 ɴᴇxᴛ ᴘᴀɢᴇ 🍁", callback_data=f"next_{int(index)-1}_{keyword}")]
+                    [InlineKeyboardButton("🍁 ʙᴀᴄᴋ ᴘᴀɢᴇ 🍁", callback_data=f"back_{int(index)-1}_{keyword}"),InlineKeyboardButton("🍁 ɴᴇxᴛ ᴘᴀɢᴇ 🍁", callback_data=f"next_{int(index)-1}_{keyword}")]
                 )
                 buttons.append(
                     [InlineKeyboardButton(f"📄 ᴘᴀɢᴇs {int(index)}/{data['total']} 📄", callback_data="pages")]
