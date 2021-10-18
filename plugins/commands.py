@@ -84,6 +84,9 @@ async def start(bot, cmd):
                     [
                         
                        InlineKeyboardButton("📝 ᴅᴏᴡɴʟᴏᴀᴅ ꜱᴜʙᴛɪᴛɪʟᴇ 📝", url="https://t.me/subtitle_dl_bot")
+                        
+                     ]
+                     ]
 
 
 
