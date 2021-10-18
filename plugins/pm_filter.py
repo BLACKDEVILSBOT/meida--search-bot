@@ -124,7 +124,7 @@ async def group(client, message):
         buttons = data['buttons'][0].copy()
 
         buttons.append(
-            [InlineKeyboardButton(text="🍁 ɴᴇxᴛ ᴘᴀɢᴇ 🍁",callback_data=f"next_0_{keyword}")]
+            [InlineKeyboardButton(text="🍁ɢᴏ ᴛᴏ ɴᴇxᴛ ᴘᴀɢ🍁",callback_data=f"next_0_{keyword}")]
         )    
         buttons.append(
             [InlineKeyboardButton(text=f"🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs 1-{data['total']} 🎃",callback_data="pages")]
