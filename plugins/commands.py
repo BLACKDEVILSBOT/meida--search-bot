@@ -112,6 +112,8 @@ async def start(bot, cmd):
                 ]
             )
         )
+    else:
+        await update.message.delete()        
 
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
