@@ -129,8 +129,8 @@ async def start(bot, cmd):
 async def cb_data(bot, update):
     if update.data == "home":
         await update.message.edit_text(
-            text=START_TEXT.format(update.from_user.mention),
-            reply_markup=START_BUTTONS,
+            text=ABOUT_TEXT.format(update.from_user.mention),
+            reply_markup=ABOUT_BUTTONS,
             disable_web_page_preview=True
         )
     else:
