@@ -116,7 +116,7 @@ async def start(bot, cmd):
 @Client.on_callback_query()
 async def cb_data(bot, update):
     if update.data == "ownerheme":
-        await await query.answer(
+        await query.answer(
             "᯽≫⋯⋯ʙᴏᴛ ᴏᴡɴᴇʀ ᴅᴇᴛᴀɪʟꜱ⋯⋯≪᯽",show_alert=True
         )
     else:
