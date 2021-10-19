@@ -116,8 +116,8 @@ async def start(bot, cmd):
 @Client.on_callback_query()
 async def cb_data(bot, update):
     if update.data == "about":
-        await query.answer(
-            "᯽≫⋯⋯ʙᴏᴛ ᴏᴡɴᴇʀ ᴅᴇᴛᴀɪʟꜱ⋯⋯≪᯽",show_alert=True
+        await bot.answer(
+            "᯽≫⋯⋯ʙᴏᴛ ᴏᴡɴᴇʀ ᴅᴇᴛᴀɪʟꜱ⋯⋯≪᯽\n🎃 ꜰᴜʟʟ\nɴᴀᴍᴇ : ʀᴀᴍᴀɴᴀɴ\n🍒 ᴜꜱᴇʀ ɴᴀᴍᴇ : @ɪᴍ_ᴏᴅɪʏᴀɴ\n\n🇮🇳 ᴄᴏᴜɴᴛʀʏ : ɪɴᴅɪᴀ\n🪴 ꜱᴛᴀᴛᴇ : ᴋᴇʀᴀʟᴀ\n🍂 ᴅɪꜱᴛʀɪᴄᴛ : ᴋᴏᴛᴛᴀʏᴀᴍ\n\n{} സർ എന്ന പിന്നെ ഞാൻ അങ്ങോട്ട്",show_alert=True
         )
     else:
         await update.message.delete()
