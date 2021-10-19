@@ -7,6 +7,18 @@ from utils import Media, get_file_details
 from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
 
+ABOUT_TEXT = """
+<b>᯽≫⋯⋯ʙᴏᴛ ᴏᴡɴᴇʀ ᴅᴇᴛᴀɪʟꜱ⋯⋯≪᯽</b>
+<b>🎃 ꜰᴜʟʟ ɴᴀᴍᴇ : ʀᴀᴍᴀɴᴀɴ</b>
+<b>🍒 ᴜꜱᴇʀ ɴᴀᴍᴇ : @ɪᴍ_ᴏᴅɪʏᴀɴ</b>
+
+<b>🇮🇳 ᴄᴏᴜɴᴛʀʏ : ɪɴᴅɪᴀ</b>
+<b>🪴 ꜱᴛᴀᴛᴇ : ᴋᴇʀᴀʟᴀ</b>
+<b>🍂 ᴅɪꜱᴛʀɪᴄᴛ : ᴋᴏᴛᴛᴀʏᴀᴍ</b>
+
+<b>{} സർ എന്ന പിന്നെ ഞാൻ അങ്ങോട്ട്</b>
+"""
+
 @Client.on_message(filters.command("start"))
 async def start(bot, cmd):
     usr_cmdall1 = cmd.text
@@ -115,9 +127,11 @@ async def start(bot, cmd):
         
 @Client.on_callback_query()
 async def cb_data(bot, update):
-    if update.data == "about":
-        await bot.answer(
-            "᯽≫⋯⋯ʙᴏᴛ ᴏᴡɴᴇʀ ᴅᴇᴛᴀɪʟꜱ⋯⋯≪᯽\n🎃 ꜰᴜʟʟ\nɴᴀᴍᴇ : ʀᴀᴍᴀɴᴀɴ\n🍒 ᴜꜱᴇʀ ɴᴀᴍᴇ : @ɪᴍ_ᴏᴅɪʏᴀɴ\n\n🇮🇳 ᴄᴏᴜɴᴛʀʏ : ɪɴᴅɪᴀ\n🪴 ꜱᴛᴀᴛᴇ : ᴋᴇʀᴀʟᴀ\n🍂 ᴅɪꜱᴛʀɪᴄᴛ : ᴋᴏᴛᴛᴀʏᴀᴍ\n\n{} സർ എന്ന പിന്നെ ഞാൻ അങ്ങോട്ട്",show_alert=True
+    if update.data == "home":
+        await update.message.edit_text(
+            text=START_TEXT.format(update.from_user.mention),
+            reply_markup=START_BUTTONS,
+            disable_web_page_preview=True
         )
     else:
         await update.message.delete()
