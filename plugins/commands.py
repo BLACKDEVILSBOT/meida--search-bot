@@ -111,8 +111,12 @@ async def start(bot, cmd):
                     ]
                 ]
             )
-        )       
-
+        )
+        
+@Client.on_callback_query()
+async def cb_data(bot, update):
+    if update.data == "close":
+        await update.message.delete()
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
 async def channel_info(bot, message):
