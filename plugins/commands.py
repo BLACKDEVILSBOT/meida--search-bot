@@ -115,7 +115,14 @@ async def start(bot, cmd):
         
 @Client.on_callback_query()
 async def cb_data(bot, update):
-        clicked = query.from_user.id
+    clicked = query.from_user.id
+    try:
+        typed = query.message.reply_to_message.from_user.id
+    except:
+        typed = query.from_user.id
+        pass
+    if (clicked == typed):
+
     if update.data == "ownerheme":
         await query.answer(
             "᯽≫⋯⋯ʙᴏᴛ ᴏᴡɴᴇʀ ᴅᴇᴛᴀɪʟꜱ⋯⋯≪᯽",show_alert=True
