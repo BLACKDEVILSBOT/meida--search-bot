@@ -120,7 +120,7 @@ async def cb_data(bot, update):
             "᯽≫⋯⋯ʙᴏᴛ ᴏᴡɴᴇʀ ᴅᴇᴛᴀɪʟꜱ⋯⋯≪᯽",show_alert=True
         )
     else:
-        await await update.message.delete()
+        await update.message.delete()
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
 async def channel_info(bot, message):
