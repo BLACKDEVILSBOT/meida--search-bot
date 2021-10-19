@@ -99,7 +99,7 @@ async def start(bot, cmd):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("🤴 ʙᴏᴛ ᴏᴡɴᴇʀ 🤴", callback_data='ownerheme'),
+                        InlineKeyboardButton("🤴 ʙᴏᴛ ᴏᴡɴᴇʀ 🤴", callback_data='about'),
                         InlineKeyboardButton("🍁 ʙᴏᴛ ɢʀᴏᴜᴘ 🍁", url="https://t.me/Movie_factorys")
                     ],
                     [
@@ -123,7 +123,7 @@ async def cb_data(bot, update):
         pass
     if (clicked == typed):
 
-    if update.data == "ownerheme":
+    if update.data == "about":
         await query.answer(
             "᯽≫⋯⋯ʙᴏᴛ ᴏᴡɴᴇʀ ᴅᴇᴛᴀɪʟꜱ⋯⋯≪᯽",show_alert=True
         )
