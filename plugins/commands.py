@@ -40,7 +40,7 @@ async def start(bot, cmd):
                 await bot.send_message(
                     chat_id=cmd.from_user.id,
                     text="**Please Join My Updates Channel to use this Bot!**",
-                    reply_markup=InlineKeyboardMarkup(
+                    reply_markup=InlinekeyboardMarkup(
                         [
                             [
                                 InlineKeyboardButton("🍿 ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ 🍿", url="https://t.me/joinchat/x6V1RmEmmGBhMjQ1")
