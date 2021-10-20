@@ -127,7 +127,7 @@ async def start(bot, cmd):
         
 @Client.on_callback_query()
 async def cb_data(bot, update):
-    if update.data == "home":
+    if update.data == "about":
         await update.message.edit_text(
             text=ABOUT_TEXT.format(update.from_user.mention),
             reply_markup=ABOUT_BUTTONS,
