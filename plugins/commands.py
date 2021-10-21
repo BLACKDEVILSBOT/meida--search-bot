@@ -129,7 +129,7 @@ async def start(bot, cmd):
 async def cb_data(bot, update):
     if update.data == "about":
         await update.answer(
-            chat_id=cmd.from_user.id,
+            chat_id=update.from_user.id,
             text=ABOUT_TEXT.format(update.from_user.mention),
             show_alert=True,
             parse_mode="html"
