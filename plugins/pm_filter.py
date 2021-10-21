@@ -1,4 +1,4 @@
-#Kanged From @TroJanZheX
+#Kanged From @TroJanZheX & Black_devil_tg
 from info import AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, API_KEY, AUTH_GROUPS, RESULT_MSG, MAIN_GROUP
 from info import TUTORIAL
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
