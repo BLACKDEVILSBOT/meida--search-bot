@@ -124,10 +124,10 @@ async def group(client, message):
         buttons = data['buttons'][0].copy()
 
         buttons.append(
-            [InlineKeyboardButton(text="◉ɢᴏ ᴛᴏ ɴᴇxᴛ ᴘᴀɢᴇ◉",callback_data=f"navigate({index_val}|next|{query})")
+            [InlineKeyboardButton(text="◉ɢᴏ ᴛᴏ ɴᴇxᴛ ᴘᴀɢᴇ◉",callback_data=f"navigate({index_val}|next|{query})")]
         )    
         buttons.append(
-            [InlineKeyboardButton(text=f"🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs 🎃 《1-{data['total']}》",callback_data=f"navigate({index_val}|next|{query})")
+            [InlineKeyboardButton(text=f"🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs 🎃 《1-{data['total']}》",callback_data=f"navigate({index_val}|next|{query})")]
         )
         poster=None
         if API_KEY:
