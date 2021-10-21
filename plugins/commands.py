@@ -128,7 +128,7 @@ async def start(bot, cmd):
 @Client.on_callback_query()
 async def cb_data(bot, update):
     if update.data == "about":
-        await update.answer("<b>᯽≫⋯⋯ʙᴏᴛ ᴏᴡɴᴇʀ ᴅᴇᴛᴀɪʟꜱ⋯⋯≪᯽</b>\n\n<b>🎃ꜰᴜʟʟ ɴᴀᴍᴇ:ʀᴀᴍᴀɴᴀɴ</b>\n<b>🍒ᴜꜱᴇʀ ɴᴀᴍᴇ:@ɪᴍ_ᴏᴅɪʏᴀɴ</b>\n<b>🇮🇳ᴄᴏᴜɴᴛʀʏ:ɪɴᴅɪᴀ</b>\n<b>🪴ꜱᴛᴀᴛᴇ:ᴋᴇʀᴀʟᴀ</b>\n<b>🍂ᴅɪꜱᴛʀɪᴄᴛ:ᴋᴏᴛᴛᴀʏᴀᴍ</b>\n\n<b>{} സർ എന്ന പിന്നെ ഞാൻ അങ്ങോട്ട്</b>",show_alert=True)
+        await update.answer(ABOUT_TEXT.format(message.from_user.mention)",show_alert=True)
     else:   
         await update.message.delete()
 
