@@ -124,10 +124,10 @@ async def group(client, message):
         buttons = data['buttons'][0].copy()
 
         buttons.append(
-            [InlineKeyboardButton(text="◉ɢᴏ ᴛᴏ ɴᴇxᴛ ᴘᴀɢᴇ◉",callback_data=f"next_0_{keyword}")]
+            [InlineKeyboardButton(text="◉ɢᴏ ᴛᴏ ɴᴇxᴛ ᴘᴀɢᴇ◉",callback_data=f"navigate({index_val}|next|{query})")
         )    
         buttons.append(
-            [InlineKeyboardButton(text=f"🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs 🎃 《1-{data['total']}》",callback_data="pages")]
+            [InlineKeyboardButton(text=f"🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs 🎃 《1-{data['total']}》",callback_data=f"navigate({index_val}|next|{query})")
         )
         poster=None
         if API_KEY:
@@ -193,7 +193,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     [InlineKeyboardButton("◉ ʙᴀᴄᴋ ᴘᴀɢᴇ ◉", callback_data=f"back_{int(index)+1}_{keyword}"),InlineKeyboardButton("🍁 ɴᴇxᴛ ᴘᴀɢᴇ 🍁", callback_data=f"next_{int(index)+1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs 🎃 《{int(index)+2}-{data['total']}》", callback_data="pages")]
+                    [InlineKeyboardButton(f"🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs 🎃 《{int(index)+2}-{data['total']}》", callback_data=f"navigate({index_val}|next|{query})")
                 )
 
                 await query.edit_message_reply_markup( 
@@ -246,7 +246,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton("🍁 ʙᴏᴛ ɢʀᴏᴜᴘ 🍁", url=MAIN_GROUP)
                 ]
                 ]
-            await query.message.edit(text=f"<b>Developer : <a href='https://telegram.dog/NxtStark'>SUBIN</a>\nLanguage : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nUpdate Channel : <a href='https://t.me/HTechMedia'>HTechMedia</a> </b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+            await query.message.edit(text=f"<b>Developer : <a href='https://telegram.dog/Black_devil_tg'>Black devil</a>\nLanguage : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nUpdate Channel : <a href='https://t.me/HTechMedia'>HTechMedia</a> </b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
 
 
