@@ -109,7 +109,7 @@ async def group(client, message):
         else:
             buttons = btn
             buttons.append(
-                [InlineKeyboardButton(text="🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs 🎃≪1-1≫",callback_data="pages")]
+                [InlineKeyboardButton(text="🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs 🎃《1-1》",callback_data="pages")]
             )
             poster=None
             if API_KEY:
@@ -127,7 +127,7 @@ async def group(client, message):
             [InlineKeyboardButton(text="◉ɢᴏ ᴛᴏ ɴᴇxᴛ ᴘᴀɢᴇ◉",callback_data=f"next_0_{keyword}")]
         )    
         buttons.append(
-            [InlineKeyboardButton(text=f"🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs 🎃 ≪1-{data['total']}≫",callback_data="pages")]
+            [InlineKeyboardButton(text=f"🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs 🎃 《1-{data['total']}》",callback_data="pages")]
         )
         poster=None
         if API_KEY:
@@ -179,7 +179,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     [InlineKeyboardButton("◉ ʙᴀᴄᴋ ᴘᴀɢᴇ ◉", callback_data=f"back_{int(index)+1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs 🎃 ≪{int(index)+2}-{data['total']}≫", callback_data="pages")]
+                    [InlineKeyboardButton(f"🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs 🎃 《{int(index)+2}-{data['total']}》", callback_data="pages")]
                 )
 
                 await query.edit_message_reply_markup( 
@@ -193,7 +193,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     [InlineKeyboardButton("◉ ʙᴀᴄᴋ ᴘᴀɢᴇ ◉", callback_data=f"back_{int(index)+1}_{keyword}"),InlineKeyboardButton("🍁 ɴᴇxᴛ ᴘᴀɢᴇ 🍁", callback_data=f"next_{int(index)+1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs 🎃 ≪{int(index)+2}-{data['total']}≫", callback_data="pages")]
+                    [InlineKeyboardButton(f"🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs 🎃 《{int(index)+2}-{data['total']}》", callback_data="pages")]
                 )
 
                 await query.edit_message_reply_markup( 
@@ -217,7 +217,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     [InlineKeyboardButton("◉ ɴᴇxᴛ ᴘᴀɢᴇ ◉", callback_data=f"next_{int(index)-1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs 🎃 ≪{int(index)}-{data['total']}≫", callback_data="pages")]
+                    [InlineKeyboardButton(f"🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs 🎃 《{int(index)}-{data['total']}》", callback_data="pages")]
                 )
 
                 await query.edit_message_reply_markup( 
@@ -231,7 +231,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     [InlineKeyboardButton("◉ ɢᴏ ᴛᴏ ʙᴀᴄᴋ ᴘᴀɢᴇ ◉", callback_data=f"back_{int(index)-1}_{keyword}"),InlineKeyboardButton("🍁 ɴᴇxᴛ ᴘᴀɢᴇ 🍁", callback_data=f"next_{int(index)-1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs 🎃 ≪{int(index)}-{data['total']}≫", callback_data="pages")]
+                    [InlineKeyboardButton(f"🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs 🎃 《{int(index)}-{data['total']}》", callback_data="pages")]
                 )
 
                 await query.edit_message_reply_markup( 
