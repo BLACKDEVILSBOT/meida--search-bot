@@ -131,6 +131,7 @@ async def cb_data(bot, update):
         await update.answer(
             text=ABOUT_TEXT.format(update.from_user.mention),
             show_alert=True,
+            disable_web_page_preview=True
         )
     elif update.data == "close":   
         await update.message.delete()
