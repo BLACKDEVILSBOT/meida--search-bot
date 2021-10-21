@@ -128,7 +128,7 @@ async def start(bot, cmd):
 @Client.on_callback_query()
 async def cb_data(bot, update):
     if update.data == "about":
-        await update.answer(ABOUT_TEXT.format(message.from_user.mention)",show_alert=True)
+        await update.answer(ABOUT_TEXT.format(message.from_user.mention),show_alert=True)
     else:   
         await update.message.delete()
 
