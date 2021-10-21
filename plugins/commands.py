@@ -8,15 +8,15 @@ from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
 
 ABOUT_TEXT = """
-᯽≫⋯⋯ʙᴏᴛ ᴏᴡɴᴇʀ ᴅᴇᴛᴀɪʟꜱ⋯⋯≪᯽
-🎃ꜰᴜʟʟ ɴᴀᴍᴇ:ʀᴀᴍᴀɴᴀɴ
-🍒ᴜꜱᴇʀ ɴᴀᴍᴇ:@ɪᴍ_ᴏᴅɪʏᴀɴ
+<b>᯽≫⋯⋯ʙᴏᴛ ᴏᴡɴᴇʀ ᴅᴇᴛᴀɪʟꜱ⋯⋯≪᯽</b>
+<b>🎃ꜰᴜʟʟ ɴᴀᴍᴇ : ʀᴀᴍᴀɴᴀɴ</b>
+<b>🍒ᴜꜱᴇʀ ɴᴀᴍᴇ : @ɪᴍ_ᴏᴅɪʏᴀɴ</b>
 
-🇮🇳 ᴄᴏᴜɴᴛʀʏ:ɪɴᴅɪᴀ
-🪴ꜱᴛᴀᴛᴇ:ᴋᴇʀᴀʟᴀ
-🍂ᴅɪꜱᴛʀɪᴄᴛ:ᴋᴏᴛᴛᴀʏᴀᴍ
+<b>🇮🇳 ᴄᴏᴜɴᴛʀʏ : ɪɴᴅɪᴀ</b>
+<b>🪴ꜱᴛᴀᴛᴇ : ᴋᴇʀᴀʟᴀ</b>
+<b>🍂ᴅɪꜱᴛʀɪᴄᴛ : ᴋᴏᴛᴛᴀʏᴀᴍ</b>
 
-{}സർ എന്ന പിന്നെ ഞാൻ അങ്ങോട്ട്
+{} <b>സർ എന്ന പിന്നെ ഞാൻ അങ്ങോട്ട്</b>
 """
 
 @Client.on_message(filters.command("start"))
@@ -128,7 +128,7 @@ async def start(bot, cmd):
 @Client.on_callback_query()
 async def cb_data(bot, update):
     if update.data == "about":
-        await update.answer(ABOUT_TEXT.format(update.from_user.mention),show_alert=True,disable_web_page_preview=True)
+        await update.answer(ABOUT_TEXT.format(update.from_user.mention),show_alert=True,parse_mode=html)
     elif update.data == "close":   
         await update.message.delete()
 
