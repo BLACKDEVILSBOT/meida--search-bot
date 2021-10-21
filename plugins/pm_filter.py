@@ -193,7 +193,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     [InlineKeyboardButton("◉ ʙᴀᴄᴋ ᴘᴀɢᴇ ◉", callback_data=f"back_{int(index)+1}_{keyword}"),InlineKeyboardButton("🍁 ɴᴇxᴛ ᴘᴀɢᴇ 🍁", callback_data=f"next_{int(index)+1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs 🎃 《{int(index)+2}-{data['total']}》", callback_data=f"navigate({index_val}|next|{query})")
+                    [InlineKeyboardButton(f"🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs 🎃 《{int(index)+2}-{data['total']}》", callback_data=f"navigate({index_val}|next|{query})")]
                 )
 
                 await query.edit_message_reply_markup( 
