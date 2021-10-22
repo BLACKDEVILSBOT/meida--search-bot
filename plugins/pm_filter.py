@@ -55,13 +55,23 @@ async def filter(client, message):
         if files:
             for file in files:
                 file_id = file.file_id
-                filename = f"🧧 {get_size(file.file_size)} ◽ {file.file_name}"
+                filename = f"🧧 {get_size(file.file_size)}"
+                filesizee = f"▫️ {file.file_name}"
                 btn.append(
-                    [InlineKeyboardButton(text=f"{filename}",callback_data=f"subinps#{file_id}")]
+                    [
+                     InlineKeyboardButton(text="🗂 FILE 👇"),
+                     InlineKeyboardButton(text="🔎 SIZE 👇")
+                    ],
+                    [
+                     InlineKeyboardButton(text=f"{filename}",callback_data=f"subinps#{file_id}"),
+                     InlineKeyboardButton(text=f"{filesizee}",callback_data=f"subinps#{file_id}")
                     )
-        else:
-            await client.send_sticker(chat_id=message.from_user.id, sticker='CAADBQADMwIAAtbcmFelnLaGAZhgBwI')
-            return
+else:
+ Send_message = await bot.send_photo( chat_id=update.chat.id,
+ photo="https://telegra.ph/file/eabeaf432b58f129ea2b4.jpg",
+ caption="<b>Couldn't Find This Movie.Try Again..! ഈ സിനിമയുടെ ഒറിജിനൽ പേര് ഗൂഗിളിൽ പോയി കണ്ടെത്തി അതുപോലെ ഇവിടെ കൊടുക്കുക 🥺</b>", reply_to_message_id=update.message_id ) 
+
+await asyncio.sleep(5) await Send_message.delete()
 
         if not btn:
             return
@@ -90,14 +100,23 @@ async def group(client, message):
         if files:
             for file in files:
                 file_id = file.file_id
-                filename = f"🧧 {get_size(file.file_size)} ◽ {file.file_name}"
+                filename = f"🧧 {file.file_name}"
+                filesizee = f"▫️ {get_size(file.file_size)}"
                 btn.append(
-                    [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=subinps_-_-_-_{file_id}")]
-                )
-        else:
-            return
-        if not btn:
-            return
+                    [
+                     InlineKeyboardButton(text="🗂 FILE 👇"),
+                     InlineKeyboardButton(text="🔎 SIZE 👇")
+                    ],
+                    [
+                     InlineKeyboardButton(text=f"{filename}",callback_data=f"subinps#{file_id}"),
+                     InlineKeyboardButton(text=f"{filesizee}",callback_data=f"subinps#{file_id}")
+                    )
+else:
+ Send_message = await bot.send_photo( chat_id=update.chat.id,
+ photo="https://telegra.ph/file/eabeaf432b58f129ea2b4.jpg",
+ caption="<b>Couldn't Find This Movie.Try Again..! ഈ സിനിമയുടെ ഒറിജിനൽ പേര് ഗൂഗിളിൽ പോയി കണ്ടെത്തി അതുപോലെ ഇവിടെ കൊടുക്കുക 🥺</b>", reply_to_message_id=update.message_id ) 
+
+await asyncio.sleep(5) await Send_message.delete()
 
         if len(btn) > 10: 
             btns = list(split_list(btn, 10)) 
@@ -109,15 +128,15 @@ async def group(client, message):
         else:
             buttons = btn
             buttons.append(
-                [InlineKeyboardButton(text="🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs 🎃《1-1》",callback_data="pages")]
+                [InlineKeyboardButton(text="🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs《1-1》🎃",callback_data="pages")]
             )
             poster=None
             if API_KEY:
                 poster=await get_poster(search)
             if poster:
-                await message.reply_photo(photo=poster, caption=f"<b>🍿 ᴍᴏᴠɪᴇ ɴᴀᴍᴇ : <code>{search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </code>\n{RESULT_MSG} </b>", reply_markup=InlineKeyboardMarkup(buttons))
+                await message.reply_photo(photo=poster, caption=f"<b>🍿 ᴍᴏᴠɪᴇ ɴᴀᴍᴇ : <code>{search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </code>{RESULT_MSG} </b>", reply_markup=InlineKeyboardMarkup(buttons))
             else:
-                await message.reply_photo(photo="https://telegra.ph/file/e489d2f7ca86a2abd7537.jpg", caption=f"<b>🍿 ᴍᴏᴠɪᴇ ɴᴀᴍᴇ : <code>{search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </code>\n{RESULT_MSG} </b>", reply_markup=InlineKeyboardMarkup(buttons))
+                await message.reply_text(f"<b>🍿 ᴍᴏᴠɪᴇ ɴᴀᴍᴇ : <code>{search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </code>{RESULT_MSG} </b>", reply_markup=InlineKeyboardMarkup(buttons))
             return
 
         data = BUTTONS[keyword]
@@ -127,15 +146,15 @@ async def group(client, message):
             [InlineKeyboardButton(text="◉ɢᴏ ᴛᴏ ɴᴇxᴛ ᴘᴀɢᴇ◉",callback_data=f"next_0_{keyword}")]
         )    
         buttons.append(
-            [InlineKeyboardButton(text=f"🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs 1/{data['total']} 🎃",callback_data="pages")]
+            [InlineKeyboardButton(text=f"🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs《1/{data['total']}》🎃",callback_data="pages")]
         )
         poster=None
         if API_KEY:
             poster=await get_poster(search)
         if poster:
-            await message.reply_photo(photo=poster, caption=f"<b>🍿 ᴍᴏᴠɪᴇ ɴᴀᴍᴇ : <code>{search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </code>\n{RESULT_MSG} </b>", reply_markup=InlineKeyboardMarkup(buttons))
+            await message.reply_photo(photo=poster, caption=f"<b>🍿 ᴍᴏᴠɪᴇ ɴᴀᴍᴇ : <code>{search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </code>{RESULT_MSG} </b>", reply_markup=InlineKeyboardMarkup(buttons))
         else:
-            await message.reply_photo(photo="https://telegra.ph/file/e489d2f7ca86a2abd7537.jpg", caption=f"<b>🍿 ᴍᴏᴠɪᴇ ɴᴀᴍᴇ : <code>{search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </code>\n{RESULT_MSG} </b>", reply_markup=InlineKeyboardMarkup(buttons))
+            await message.reply_text(f"<b>🍿 ᴍᴏᴠɪᴇ ɴᴀᴍᴇ : <code>{search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </code>{RESULT_MSG} </b>", reply_markup=InlineKeyboardMarkup(buttons))
     
 def get_size(size):
     """Get size in readable format"""
@@ -179,7 +198,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     [InlineKeyboardButton("◉ ʙᴀᴄᴋ ᴘᴀɢᴇ ◉", callback_data=f"back_{int(index)+1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs {int(index)+2}/{data['total']} 🎃", callback_data="pages")]
+                    [InlineKeyboardButton(f"🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs《{int(index)+2}/{data['total']}》", callback_data="pages")]
                 )
 
                 await query.edit_message_reply_markup( 
@@ -190,10 +209,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 buttons = data['buttons'][int(index)+1].copy()
 
                 buttons.append(
-                    [InlineKeyboardButton("◉ ʙᴀᴄᴋ ᴘᴀɢᴇ ◉", callback_data=f"back_{int(index)+1}_{keyword}"),InlineKeyboardButton("🍁 ɴᴇxᴛ ᴘᴀɢᴇ 🍁", callback_data=f"next_{int(index)+1}_{keyword}")]
+                    [InlineKeyboardButton("◉ ʙᴀᴄᴋ ᴘᴀɢᴇ ◉", callback_data=f"back_{int(index)+1}_{keyword}"),InlineKeyboardButton("◉ɢᴏ ᴛᴏ ɴᴇxᴛ ᴘᴀɢᴇ◉", callback_data=f"next_{int(index)+1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs {int(index)+2}/{data['total']} 🎃", callback_data="pages")]
+                    [InlineKeyboardButton(f"🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs《{int(index)+2}/{data['total']}》🎃", callback_data="pages")]
                 )
 
                 await query.edit_message_reply_markup( 
@@ -217,7 +236,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     [InlineKeyboardButton("◉ ɴᴇxᴛ ᴘᴀɢᴇ ◉", callback_data=f"next_{int(index)-1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs {int(index)}/{data['total']} 🎃", callback_data="pages")]
+                    [InlineKeyboardButton(f"🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs《{int(index)}/{data['total']}》🎃", callback_data="pages")]
                 )
 
                 await query.edit_message_reply_markup( 
@@ -228,10 +247,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 buttons = data['buttons'][int(index)-1].copy()
 
                 buttons.append(
-                    [InlineKeyboardButton("◉ ɢᴏ ᴛᴏ ʙᴀᴄᴋ ᴘᴀɢᴇ ◉", callback_data=f"back_{int(index)-1}_{keyword}"),InlineKeyboardButton("🍁 ɴᴇxᴛ ᴘᴀɢᴇ 🍁", callback_data=f"next_{int(index)-1}_{keyword}")]
+                    [InlineKeyboardButton("◉ ɢᴏ ᴛᴏ ʙᴀᴄᴋ ᴘᴀɢᴇ ◉", callback_data=f"back_{int(index)-1}_{keyword}"),InlineKeyboardButton("◉ ɴᴇxᴛ ᴘᴀɢᴇ ◉", callback_data=f"next_{int(index)-1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs {int(index)}/{data['total']} 🎃", callback_data="pages")]
+                    [InlineKeyboardButton(f"🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs《{int(index)}/{data['total']}》🎃", callback_data="pages")]
                 )
 
                 await query.edit_message_reply_markup( 
@@ -246,7 +265,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton("🍁 ʙᴏᴛ ɢʀᴏᴜᴘ 🍁", url=MAIN_GROUP)
                 ]
                 ]
-            await query.message.edit(text=f"<b>Developer : <a href='https://telegram.dog/Black_devil_tg'>Black devil</a>\nLanguage : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nUpdate Channel : <a href='https://t.me/HTechMedia'>HTechMedia</a> </b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+            await query.message.edit(text=f"<b>Developer : <a href='https://telegram.dog/NxtStark'>SUBIN</a>\nLanguage : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nUpdate Channel : <a href='https://t.me/HTechMedia'>HTechMedia</a> </b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
 
 
