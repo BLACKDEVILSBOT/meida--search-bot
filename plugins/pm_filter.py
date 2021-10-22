@@ -61,7 +61,7 @@ async def filter(client, message):
                 file_link = f"https://telegram.dog/{nyva}?start=subinps_-_-_-_{file_id}"
                 btn.append(
                     [
-                            InlineKeyboardButton(text=f"🧧 {file_name}", url=f"{file_link}"),
+                            InlineKeyboardButton(text=f"🧧 {filename}", url=f"{file_link}"),
                             InlineKeyboardButton(text=f"▫️ {file_size}", url=f"{file_link}")
                     ]   
                 )
@@ -101,7 +101,7 @@ async def group(client, message):
                 file_link = f"https://telegram.dog/{nyva}?start=subinps_-_-_-_{file_id}"
                 btn.append(
                     [
-                            InlineKeyboardButton(text=f"🧧 {file_name}", url=f"{file_link}"),
+                            InlineKeyboardButton(text=f"🧧 {filename}", url=f"{file_link}"),
                             InlineKeyboardButton(text=f"▫️ {file_size}", url=f"{file_link}")
                     ]   
                 )
