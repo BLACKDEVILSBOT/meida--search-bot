@@ -137,19 +137,22 @@ async def group(client, message):
         data = BUTTONS[keyword]
         buttons = data['buttons'][0].copy()
 
-        buttons.append(
-            [InlineKeyboardButton(text="◉ ɴᴇxᴛ ᴘᴀɢᴇ ◉",callback_data=f"next_0_{keyword}")]
-        )    
-        buttons.append(
+            buttons = btn
+            buttons.append(
+                    [
+                        InlineKeyboardButton(text="◉ ɴᴇxᴛ ᴘᴀɢᴇ ◉",callback_data=f"next_0_{keyword}")
+                    ]
+                )    
+            buttons.append(
                     [
                             InlineKeyboardButton(text="🎃 ᴘᴀɢᴇ ɴᴜᴍʙᴇʀs 🎃"),
                             InlineKeyboardButton(text="《 1-{data['total']} 》",callback_data="pages")
                     ]   
                 )
-        poster=None
-        if API_KEY:
-            poster=await get_poster(search)
-        if poster:
+            poster=None
+            if API_KEY:
+                poster=await get_poster(search)
+            if poster:
                 await message.reply_photo(photo=poster, caption=f"<b>🍿 ᴍᴏᴠɪᴇ ɴᴀᴍᴇ : <code>{search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </code>{RESULT_MSG} </b>", reply_markup=InlineKeyboardMarkup(buttons))
             else:
                 await message.reply_photo(photo=NOR_IMG, caption=f"<b>🍿 ᴍᴏᴠɪᴇ ɴᴀᴍᴇ : <code>{search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </code>{RESULT_MSG} </b>", reply_markup=InlineKeyboardMarkup(buttons))
