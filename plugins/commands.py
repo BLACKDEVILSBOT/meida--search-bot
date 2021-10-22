@@ -7,7 +7,7 @@ from utils import Media, get_file_details
 from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
 
-ABOUT_TEXT = """
+ABOUT_TEXT = f"""
 ᯽≫⋯⋯ʙᴏᴛ ᴏᴡɴᴇʀ ᴅᴇᴛᴀɪʟꜱ⋯⋯≪᯽
 🎃ꜰᴜʟʟ ɴᴀᴍᴇ:ʀᴀᴍᴀɴᴀɴ
 🍒ᴜꜱᴇʀ ɴᴀᴍᴇ:@ɪᴍ_ᴏᴅɪʏᴀɴ
