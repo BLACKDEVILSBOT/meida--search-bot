@@ -117,7 +117,7 @@ async def start(bot, cmd):
 async def cb_data(bot, update):
     if update.data == "about":
         await update.answer(
-            text="᯽≫⋯⋯ʙᴏᴛ ᴏᴡɴᴇʀ ᴅᴇᴛᴀɪʟꜱ⋯⋯≪᯽\n🎃ꜰᴜʟʟ ɴᴀᴍᴇ:ʀᴀᴍᴀɴᴀɴ\n🍒ᴜꜱᴇʀ ɴᴀᴍᴇ:@ɪᴍ_ᴏᴅɪʏᴀɴ\n\nᴄᴏᴜɴᴛʀʏ:ɪɴᴅɪᴀ\nꜱᴛᴀᴛᴇ:ᴋᴇʀᴀʟᴀ\nᴅɪꜱᴛʀɪᴄᴛ:ᴋᴏᴛᴛᴀʏᴀᴍ\n\n{} സർ എന്ന പിന്നെ ഞാൻ അങ്ങോട്ട്".format(update.from_user.mention),
+            text="᯽≫⋯⋯ʙᴏᴛ ᴏᴡɴᴇʀ ᴅᴇᴛᴀɪʟꜱ⋯⋯≪᯽\n🎃ꜰᴜʟʟ ɴᴀᴍᴇ:ʀᴀᴍᴀɴᴀɴ\n🍒ᴜꜱᴇʀ ɴᴀᴍᴇ:@ɪᴍ_ᴏᴅɪʏᴀɴ\n\nᴄᴏᴜɴᴛʀʏ:ɪɴᴅɪᴀ\nꜱᴛᴀᴛᴇ:ᴋᴇʀᴀʟᴀ\nᴅɪꜱᴛʀɪᴄᴛ:ᴋᴏᴛᴛᴀʏᴀᴍ".format(update.from_user.mention),
             show_alert=True,
         )
     elif update.data == "close":   
