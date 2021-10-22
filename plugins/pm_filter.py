@@ -66,12 +66,9 @@ async def filter(client, message):
                      InlineKeyboardButton(text=f"{filename}",callback_data=f"subinps#{file_id}"),
                      InlineKeyboardButton(text=f"{filesizee}",callback_data=f"subinps#{file_id}")]
                     )
-else:
- Send_message = await bot.send_photo( chat_id=update.chat.id,
- photo="https://telegra.ph/file/eabeaf432b58f129ea2b4.jpg",
- caption="<b>Couldn't Find This Movie.Try Again..! ഈ സിനിമയുടെ ഒറിജിനൽ പേര് ഗൂഗിളിൽ പോയി കണ്ടെത്തി അതുപോലെ ഇവിടെ കൊടുക്കുക 🥺</b>", reply_to_message_id=update.message_id ) 
-
-await asyncio.sleep(5) await Send_message.delete()
+        else:
+            await client.send_sticker(chat_id=message.from_user.id, sticker='CAADBQADMwIAAtbcmFelnLaGAZhgBwI')
+            return
 
         if not btn:
             return
@@ -111,12 +108,16 @@ async def group(client, message):
                      InlineKeyboardButton(text=f"{filename}",callback_data=f"subinps#{file_id}"),
                      InlineKeyboardButton(text=f"{filesizee}",callback_data=f"subinps#{file_id}")]
                     )
-else:
- Send_message = await bot.send_photo( chat_id=update.chat.id,
- photo="https://telegra.ph/file/eabeaf432b58f129ea2b4.jpg",
- caption="<b>Couldn't Find This Movie.Try Again..! ഈ സിനിമയുടെ ഒറിജിനൽ പേര് ഗൂഗിളിൽ പോയി കണ്ടെത്തി അതുപോലെ ഇവിടെ കൊടുക്കുക 🥺</b>", reply_to_message_id=update.message_id ) 
+               else:
+                   Send_message = await bot.send_photo(
+                       chat_id=update.chat.id,
+                       photo="https://telegra.ph/file/eabeaf432b58f129ea2b4.jpg",
+                       caption="<b>Couldn't Find This Movie.Try Again..! ഈ സിനിമയുടെ ഒറിജിനൽ പേര് ഗൂഗിളിൽ പോയി കണ്ടെത്തി അതുപോലെ ഇവിടെ കൊടുക്കുക 🥺</b>",
+                       reply_to_message_id=update.message_id
+                   ) 
 
-await asyncio.sleep(5) await Send_message.delete()
+                   await asyncio.sleep(5)
+                   await Send_message.delete()
 
         if len(btn) > 10: 
             btns = list(split_list(btn, 10)) 
