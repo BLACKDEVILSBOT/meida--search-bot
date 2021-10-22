@@ -59,12 +59,18 @@ async def filter(client, message):
                 filesizee = f"▫️ {file.file_name}"
                 btn.append(
                     [
-                     InlineKeyboardButton(text=f"🗂 FILE 👇"),
-                     InlineKeyboardButton(text=f"🔎 SIZE 👇")
+                        [
+                         InlineKeyboardButton(text=f"🗂 FILE 👇"),
+                         InlineKeyboardButton(text=f"🔎 SIZE 👇")
+                        ]
                     ],
                     [
-                     InlineKeyboardButton(text=f"{filename}",callback_data=f"subinps#{file_id}"),
-                     InlineKeyboardButton(text=f"{filesizee}",callback_data=f"subinps#{file_id}")]
+                     
+                        [
+                         InlineKeyboardButton(text=f"{filename}",callback_data=f"subinps#{file_id}"),
+                         InlineKeyboardButton(text=f"{filesizee}",callback_data=f"subinps#{file_id}")
+                        ]
+                    ]
                     )
         else:
             await client.send_sticker(chat_id=message.from_user.id, sticker='CAADBQADMwIAAtbcmFelnLaGAZhgBwI')
@@ -101,12 +107,18 @@ async def group(client, message):
                 filesizee = f"▫️ {get_size(file.file_size)}"
                 btn.append(
                     [
-                     InlineKeyboardButton(text=f"🗂 FILE 👇"),
-                     InlineKeyboardButton(text=f"🔎 SIZE 👇")
+                        [
+                         InlineKeyboardButton(text=f"🗂 FILE 👇"),
+                         InlineKeyboardButton(text=f"🔎 SIZE 👇")
+                        ]
                     ],
                     [
-                     InlineKeyboardButton(text=f"{filename}",callback_data=f"subinps#{file_id}"),
-                     InlineKeyboardButton(text=f"{filesizee}",callback_data=f"subinps#{file_id}")]
+                     
+                        [
+                         InlineKeyboardButton(text=f"{filename}",callback_data=f"subinps#{file_id}"),
+                         InlineKeyboardButton(text=f"{filesizee}",callback_data=f"subinps#{file_id}")
+                        ]
+                    ]
                     )
         else:
             Send_message = await bot.send_photo(
