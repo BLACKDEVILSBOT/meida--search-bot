@@ -64,7 +64,7 @@ async def filter(client, message):
                     ],
                     [
                      InlineKeyboardButton(text=f"{filename}",callback_data=f"subinps#{file_id}"),
-                     InlineKeyboardButton(text=f"{filesizee}",callback_data=f"subinps#{file_id}")
+                     InlineKeyboardButton(text=f"{filesizee}",callback_data=f"subinps#{file_id}")]
                     )
 else:
  Send_message = await bot.send_photo( chat_id=update.chat.id,
@@ -109,7 +109,7 @@ async def group(client, message):
                     ],
                     [
                      InlineKeyboardButton(text=f"{filename}",callback_data=f"subinps#{file_id}"),
-                     InlineKeyboardButton(text=f"{filesizee}",callback_data=f"subinps#{file_id}")
+                     InlineKeyboardButton(text=f"{filesizee}",callback_data=f"subinps#{file_id}")]
                     )
 else:
  Send_message = await bot.send_photo( chat_id=update.chat.id,
