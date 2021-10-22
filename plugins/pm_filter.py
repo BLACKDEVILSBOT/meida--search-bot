@@ -59,8 +59,8 @@ async def filter(client, message):
                 filesizee = f"▫️ {file.file_name}"
                 btn.append(
                     [
-                     InlineKeyboardButton(text="🗂 FILE 👇"),
-                     InlineKeyboardButton(text="🔎 SIZE 👇")
+                     InlineKeyboardButton(text=f"🗂 FILE 👇"),
+                     InlineKeyboardButton(text=f"🔎 SIZE 👇")
                     ],
                     [
                      InlineKeyboardButton(text=f"{filename}",callback_data=f"subinps#{file_id}"),
@@ -101,8 +101,8 @@ async def group(client, message):
                 filesizee = f"▫️ {get_size(file.file_size)}"
                 btn.append(
                     [
-                     InlineKeyboardButton(text="🗂 FILE 👇"),
-                     InlineKeyboardButton(text="🔎 SIZE 👇")
+                     InlineKeyboardButton(text=f"🗂 FILE 👇"),
+                     InlineKeyboardButton(text=f"🔎 SIZE 👇")
                     ],
                     [
                      InlineKeyboardButton(text=f"{filename}",callback_data=f"subinps#{file_id}"),
