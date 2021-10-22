@@ -7,8 +7,6 @@ from utils import Media, get_file_details
 from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
 
-ABOUT_TEXT=f"᯽≫⋯⋯ʙᴏᴛ ᴏᴡɴᴇʀ ᴅᴇᴛᴀɪʟꜱ⋯⋯≪᯽\n🎃ꜰᴜʟʟ ɴᴀᴍᴇ:ʀᴀᴍᴀɴᴀɴ\n🍒ᴜꜱᴇʀ ɴᴀᴍᴇ:@ɪᴍ_ᴏᴅɪʏᴀɴ\n\nᴄᴏᴜɴᴛʀʏ:ɪɴᴅɪᴀ\nꜱᴛᴀᴛᴇ:ᴋᴇʀᴀʟᴀ\nᴅɪꜱᴛʀɪᴄᴛ:ᴋᴏᴛᴛᴀʏᴀᴍ\n\n{} സർ എന്ന പിന്നെ ഞാൻ അങ്ങോട്ട്"
-
 @Client.on_message(filters.command("start"))
 async def start(bot, cmd):
     usr_cmdall1 = cmd.text
@@ -119,7 +117,7 @@ async def start(bot, cmd):
 async def cb_data(bot, update):
     if update.data == "about":
         await update.answer(
-            text=ABOUT_TEXT.format(update.from_user.mention),
+            text=f"᯽≫⋯⋯ʙᴏᴛ ᴏᴡɴᴇʀ ᴅᴇᴛᴀɪʟꜱ⋯⋯≪᯽\n🎃ꜰᴜʟʟ ɴᴀᴍᴇ:ʀᴀᴍᴀɴᴀɴ\n🍒ᴜꜱᴇʀ ɴᴀᴍᴇ:@ɪᴍ_ᴏᴅɪʏᴀɴ\n\nᴄᴏᴜɴᴛʀʏ:ɪɴᴅɪᴀ\nꜱᴛᴀᴛᴇ:ᴋᴇʀᴀʟᴀ\nᴅɪꜱᴛʀɪᴄᴛ:ᴋᴏᴛᴛᴀʏᴀᴍ\n\n{} സർ എന്ന പിന്നെ ഞാൻ അങ്ങോട്ട്".format(update.from_user.mention),
             show_alert=True,
         )
     elif update.data == "close":   
