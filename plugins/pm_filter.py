@@ -95,7 +95,7 @@ async def group(client, message):
                     [InlineKeyboardButton(text=f"{filename}",callback_data=f"subinps#{file_id}")]
                     )
         else:
-            Send_message = await cmd.reply_photo(
+            Send_message = await bot.send_photo(
                 chat_id=update.chat.id,
                 photo="https://telegra.ph/file/e489d2f7ca86a2abd7537.jpg",
                 caption="<b>Couldn't Find This Movie.Try Again..! ഈ സിനിമയുടെ ഒറിജിനൽ പേര് ഗൂഗിളിൽ പോയി കണ്ടെത്തി അതുപോലെ ഇവിടെ കൊടുക്കുക 🥺</b>",
