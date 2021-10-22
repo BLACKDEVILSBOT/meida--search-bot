@@ -135,7 +135,7 @@ async def group(client, message):
             poster=await get_poster(search)
         if poster:
                 await message.reply_photo(photo=poster, caption=f"<b>🍿 ᴍᴏᴠɪᴇ ɴᴀᴍᴇ : <code>{search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </code>{RESULT_MSG} </b>", reply_markup=InlineKeyboardMarkup(buttons))
-            else:
+        else:
                 await message.reply_photo(photo=NOR_IMG, caption=f"<b>🍿 ᴍᴏᴠɪᴇ ɴᴀᴍᴇ : <code>{search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </code>{RESULT_MSG} </b>", reply_markup=InlineKeyboardMarkup(buttons))
 
     
